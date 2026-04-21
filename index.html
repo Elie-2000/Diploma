@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Bachelor of Science Diploma | Ndorimana Elie</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #d4c9a6;  /* vintage parchment-like background */
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Diploma certificate card */
+        .diploma {
+            max-width: 1000px;
+            width: 100%;
+            background: #fef7e0;
+            background-image: radial-gradient(circle at 10% 20%, rgba(210, 180, 140, 0.05) 2%, transparent 2.5%),
+                              radial-gradient(circle at 80% 70%, rgba(160, 120, 60, 0.05) 1.5%, transparent 2%);
+            background-size: 40px 40px, 35px 35px;
+            border: 18px double #b97f3a;
+            border-radius: 24px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2), inset 0 1px 4px rgba(255, 255, 200, 0.8);
+            padding: 2.5rem 2rem 2.8rem;
+            transition: all 0.2s;
+        }
+
+        /* decorative borders inner */
+        .diploma-inner {
+            border: 1px solid #e0c28a;
+            padding: 1.8rem 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 252, 235, 0.6);
+        }
+
+        /* seal / crest style */
+        .university-seal {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .seal-icon {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 90px;
+            background: #f3e5c0;
+            border: 3px solid #b97f3a;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .seal-icon span {
+            font-size: 2.3rem;
+            font-weight: bold;
+            color: #7a4c1d;
+            letter-spacing: 2px;
+        }
+
+        .seal-icon small {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #7a4c1d;
+            font-family: monospace;
+        }
+
+        .uni-name {
+            text-align: center;
+            margin: 1rem 0 0.25rem;
+        }
+
+        .uni-name h2 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            color: #2c3e2f;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 2px solid #c7a55b;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .college {
+            text-align: center;
+            font-size: 1rem;
+            color: #4e3e2a;
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        /* main title */
+        .award-title {
+            text-align: center;
+            margin: 2rem 0 1rem;
+        }
+
+        .award-title h3 {
+            font-size: 1.6rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #4b2f14;
+            border-top: 1px solid #e2c48b;
+            border-bottom: 1px solid #e2c48b;
+            display: inline-block;
+            padding: 8px 24px;
+            background: #fff6e5;
+        }
+
+        /* graduate name */
+        .graduate-name {
+            text-align: center;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .graduate-name h1 {
+            font-size: 3.2rem;
+            font-family: 'Times New Roman', serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #2a2b1f;
+            letter-spacing: 3px;
+            word-break: keep-all;
+            border-bottom: 2px dashed #c7a55b;
+            display: inline-block;
+            padding: 0 0 6px;
+        }
+
+        .degree-info {
+            text-align: center;
+            margin: 1.5rem 0 0.8rem;
+            font-size: 1.3rem;
+            line-height: 1.5;
+            color: #2e3b2c;
+        }
+
+        .degree-info strong {
+            font-weight: 800;
+            color: #7a4c1d;
+        }
+
+        .honour {
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            background: #f3e9cf;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 1rem;
+            padding: 0.4rem 1.8rem;
+            border-radius: 40px;
+            letter-spacing: 1px;
+            color: #8b5a2b;
+            font-weight: 500;
+        }
+
+        .ceremony {
+            text-align: center;
+            margin: 1.5rem 0 2rem;
+            font-size: 1.05rem;
+            color: #4b3a22;
+            line-height: 1.6;
+        }
+
+        /* signatures row */
+        .signatures {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin: 2rem 1rem 0.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #dfce9e;
+        }
+
+        .signature-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .sign-line {
+            width: 180px;
+            max-width: 90%;
+            height: 2px;
+            background: #b28b5e;
+            margin: 1.8rem auto 0.5rem;
+        }
+
+        .signature-item p {
+            font-size: 0.9rem;
+            color: #4a3720;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .signature-item .title {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #7c5a34;
+        }
+
+        /* registrar & VC visual (emulating image placements but responsive) */
+        .officials {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 10px;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: #8b7652;
+            border-top: 1px solid #ebddb0;
+            padding-top: 1rem;
+        }
+
+        @media (max-width: 700px) {
+            .diploma {
+                padding: 1.2rem;
+            }
+            .graduate-name h1 {
+                font-size: 2.2rem;
+            }
+            .degree-info {
+                font-size: 1rem;
+            }
+            .sign-line {
+                width: 100px;
+            }
+            .signature-item {
+                min-width: 110px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="diploma">
+    <div class="diploma-inner">
+        <!-- University Seal representation (based on description) -->
+        <div class="university-seal">
+            <div class="seal-icon">
+                <span>🎓</span>
+                <small>HONOR • SCIENTIA</small>
+            </div>
+        </div>
+
+        <div class="uni-name">
+            <h2>UNIVERSITY OF RWANDA</h2>
+        </div>
+        <div class="college">
+            COLLEGE OF SCIENCE AND TECHNOLOGY
+        </div>
+
+        <!-- Award statement -->
+        <div class="award-title">
+            <h3>DIPLOMA OF BACHELOR'S DEGREE</h3>
+        </div>
+
+        <!-- Graduate full name -->
+        <div class="graduate-name">
+            <h1>NDORIMANA ELIE</h1>
+        </div>
+
+        <div class="degree-info">
+            has been awarded the degree of <br>
+            <strong>BACHELOR OF SCIENCE WITH HONOURS IN MATHEMATICS</strong> <br>
+            Option: <strong>APPLIED MATHEMATICS</strong>
+        </div>
+
+        <div style="text-align: center;">
+            <div class="honour">
+                🏅 WITH SECOND CLASS HONOURS, LOWER DIVISION 🏅
+            </div>
+        </div>
+
+        <div class="ceremony">
+            Conferred at the congregation ceremony held on <br>
+            <strong>17th Day of October, 2025</strong>
+        </div>
+
+        <!-- Signatures area (inspired from images: registrar & vice chancellor) -->
+        <div class="signatures">
+            <div class="signature-item">
+                <div class="sign-line"></div>
+                <p class="title">University Registrar</p>
+                <p>(Official Seal & Signature)</p>
+            </div>
+            <div class="signature-item">
+                <div class="sign-line"></div>
+                <p class="title">Vice Chancellor</p>
+                <p>(Authority of the University)</p>
+            </div>
+        </div>
+
+        <!-- optional additional information to match PDF visual -->
+        <div class="footer-note">
+            This diploma certifies the completion of all academic requirements<br>
+            of the Bachelor's programme in Applied Mathematics.
+        </div>
+    </div>
+</div>
+</body>
+</html>
